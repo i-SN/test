@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../pages/question_page.dart';
-import '../../utils/bar.dart';
-import '../../text/text.dart';
+import './question_page.dart';
+import '../utils/bar.dart';
 
 
       // -- AME -- //

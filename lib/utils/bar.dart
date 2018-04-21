@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../pages/landing_page.dart';
-import '../pages/text_page.dart';
 
 
 class Bar extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/bouton.dart';
+import './bouton.dart';
 
 
 class Bouton extends StatelessWidget {
@@ -11,11 +11,11 @@ class Bouton extends StatelessWidget {
       child: new Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[ 
-          new Padding(padding: new EdgeInsets.only(bottom: 75.0)),
+          new Padding(padding: new EdgeInsets.only(bottom: 50.0)),
             new AnswerButton(true),
             new AnswerButton(true),
             new AnswerButton(false),
-            new Padding(padding: new EdgeInsets.only(bottom: 75.0)),
+            new Padding(padding: new EdgeInsets.only(bottom: 50.0)),
         ]
       ),
     );

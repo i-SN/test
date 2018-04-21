@@ -1,37 +1,39 @@
 import 'package:flutter/material.dart';
-import '../../pages/question_page.dart';
-import '../../utils/bar.dart';
-import '../../text/text.dart';
+import '../../utils/bar.dart'; // barre de vie
+import '../../text/text_void.dart'; // texte
+import '../../bouton/void/bouton_void.dart'; // bouton
 
     ///------------------///
-    //// ---- AME ---- ////7
+    //// ---- VOID ---- ////7
     ///------------------///
     ///_____Acceuil______///
 
 
+// LIEU // --> VOID
 
 // TEXT //
-List<Ligne> dialogue = [
-  histoire[0],
-  histoire[1],
-  histoire[2],
-  histoire[3],
+List<Texte> dialogue = [
+  text[0],
+  text[1],
+  text[2],
+  text[3],
 ];
 
+int numero=0; // numero de la page choix
 
 // nouvelle page :
-class AmePage extends StatefulWidget {
+class VoidPage extends StatefulWidget {
 
   final String nom; // nom du personnage
 
-AmePage(this.nom);
+VoidPage(this.nom);
 
 // construction de la classe : //
   @override 
-  AmePageState createState() => new AmePageState(this.nom);
+  VoidPageState createState() => new VoidPageState(this.nom);
 }
 
-class AmePageState extends State<AmePage> {
+class VoidPageState extends State<VoidPage> {
 
 // variables : //
 final String nom;// nom du personnage
@@ -44,13 +46,13 @@ ScrollController scrollController= new ScrollController(initialScrollOffset: 50.
 // BOUTON INTERACTION FONCTION //
 void onPressed2() {
   setState((){
-
+  
   scrollController.animateTo((ligne+2)*20+ligne*3.75, duration: new Duration(seconds: 1), curve: Curves.easeInOut);
   print(scrollController);
   pressed++;
   if(pressed == dialogue.length) {
       pressed=0; // reset bouton
-      Navigator.of(context).pushAndRemoveUntil(new MaterialPageRoute(builder: (BuildContext context) => new Bouton()), (Route route) => route == null);
+      Navigator.of(context).pushAndRemoveUntil(new MaterialPageRoute(builder: (BuildContext context) => boutonchoix[numero]), (Route route) => route == null);
       ligne=ligne+dialogue[pressed].ligne;
       }else{
         ligne=ligne+dialogue[pressed].ligne;
@@ -61,7 +63,7 @@ void onPressed2() {
 
 
 // Création de la page : //
-AmePageState(this.nom);
+VoidPageState(this.nom);
   @override
   Widget build(BuildContext context) {
     return new Material(
@@ -69,8 +71,8 @@ AmePageState(this.nom);
       // BACKGROUND //
        decoration: new BoxDecoration(image: new DecorationImage(fit: BoxFit.fitHeight ,image: new AssetImage("assets/background.jpg"),)),
 
-      // --  ---- -- // 
-      // --  CORE -- // 
+      // --  ----- -- // 
+      // --  CORPS -- // 
       // --  ---- -- //
 
         child: new Column(
